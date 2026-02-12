@@ -1,9 +1,9 @@
-// vite.config.ts
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig({
+  base: "/",   // IMPORTANT for custom domain
   plugins: [
     react(),
     VitePWA({
@@ -15,7 +15,7 @@ export default defineConfig({
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#ffffff",
-        icons: [], // keep empty for MVP
+        icons: [],
       },
     }),
   ],

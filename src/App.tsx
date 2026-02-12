@@ -1,33 +1,29 @@
-// src/App.tsx
-import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { ensureAnonAuth } from "./firebase";
-import Home from "./Pages/Home";
-import Results from "./Pages/Results";
-import Confirm from "./Pages/Confirm";
-import Driver from "./Pages/Driver";
-import ActiveVehicles from "./Pages/ActiveVehicles";
-
 export default function App() {
-  useEffect(() => { ensureAnonAuth(); }, []);
-
   return (
-    <BrowserRouter>
-      <div style={{ padding: 16, display: "flex", gap: 12, alignItems: "center" }}>
-        <Link to="/" style={{ fontWeight: 800, color: "#ff4d6d", textDecoration: "none" }}>
-          KayseriPark AVM Taksi
-        </Link>
-        <Link to="/active">Active vehicles</Link>
-        <Link to="/driver">Driver</Link>
-      </div>
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "system-ui, sans-serif",
+        background: "#ffffff",
+        textAlign: "center",
+        padding: 24,
+      }}
+    >
+      <h1 style={{ fontSize: 36, marginBottom: 16 }}>
+        KayseriPark AVM Taksi
+      </h1>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/results" element={<Results />} />
-        <Route path="/confirm" element={<Confirm />} />
-        <Route path="/active" element={<ActiveVehicles />} />
-        <Route path="/driver" element={<Driver />} />
-      </Routes>
-    </BrowserRouter>
+      <p style={{ fontSize: 18, opacity: 0.7, marginBottom: 24 }}>
+        We are currently under construction.
+      </p>
+
+      <p style={{ fontSize: 14, opacity: 0.5 }}>
+        Coming soon.
+      </p>
+    </div>
   );
 }
